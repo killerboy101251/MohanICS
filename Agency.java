@@ -8,7 +8,7 @@ public class Agency {
         String s= sc.next();
         System.out.println("enter the quantity");
         int x= sc.nextInt();
-        if(s.equals("induction heater") || s.equals("heater"))
+        if(s.equalsIgnoreCase("induction heater") || s.equalsIgnoreCase("heater"))
         {
             if(x>=50)
             {
@@ -23,7 +23,7 @@ public class Agency {
                 System.out.println(x*950);
             }
         }
-      else  if(s.equals("electric kettle") || s.equals("kettel"))
+      else  if(s.equalsIgnoreCase("electric kettle") || s.equalsIgnoreCase("kettel"))
 
         {
             if(x>=50)
