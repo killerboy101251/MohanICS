@@ -35,7 +35,7 @@ public class Electricity {
         System.out.println("enter the units");
         int x=sc.nextInt();
         BillGenerate bg = new BillGenerate();
-        System.out.println("total bill is:"+bg.bill(x,s)+"for "+s+"purpose");
+        System.out.println("total bill is:"+bg.bill(x,s)+"for "+s+" purpose");
 
     }
 }
