@@ -32,20 +32,15 @@ public class User
         ArrayList<UserDetails> MYBANK = new ArrayList<>();
 
 
-    while(true)
+    while(true) {
 
-            {
+        System.out.println("Choose the operation to exceute");
+        System.out.println("enter 1 :to create an new account 2:Deposit the money 3:to withdraw money 4:close the account PRESS Any key to exit");
+        int response = sc.nextInt();
 
-                System.out.println("Choose the operation to exceute");
-                System.out.println("enter 1 :to create an new account 2:Deposit the money 3:to withdraw money 4:close the account PRESS Any key to exit");
-                int response = sc.nextInt();
 
-                new Thread()
-                {
-                    @Override
-                    public void run()
-                    {
-                if (response == 1) {
+        if (response == 1) {
+
                     System.out.println("enter your name:");
                     String s = sc.next();
                     System.out.println("enter your age:");
@@ -61,41 +56,37 @@ public class User
                     MYBANK.add(ud);
 
                 }
-                    }
-                }.start();
 
-                new Thread() {
-                    @Override
-                    public void run() {
 
-                        if (response == 2) {
-                            System.out.println("enter the money to deposit");
-                            double deposit_money = sc.nextDouble();
 
-                            System.out.println("enter your account number");
-                            String acctnum = sc.next();
-                            int flag = 0;
-                            for (UserDetails ud : MYBANK) {
-                                if (ud.new_AccountNumber.equalsIgnoreCase(acctnum)) {
-                                    System.out.println("new balance is:" + B.deposit_money(deposit_money,balance));
-                                }
-                            }
-                            if (flag == 0) {
-                                System.out.println("user not found plz try again");
-                            }
+
+        if (response == 2) {
+
+                    System.out.println("enter the money to deposit");
+                    double deposit_money = sc.nextDouble();
+
+                    System.out.println("enter your account number");
+                    String acctnum = sc.next();
+                    int flag = 0;
+                    for (UserDetails ud : MYBANK) {
+                        if (ud.new_AccountNumber.equalsIgnoreCase(acctnum)) {
+                            System.out.println("new balance is:" + B.deposit_money(deposit_money, balance));
                         }
                     }
-                }.start();
+                    if (flag == 0) {
+                        System.out.println("user not found plz try again");
+                    }
+                }
 
 
 
 
 
-                new Thread() {
 
-                    @Override
-                    public void run() {
+
+
                         if (response == 3) {
+                            {
                             System.out.println("enter the money to withdarw");
                             double withdraw_money = sc.nextDouble();
 
@@ -120,17 +111,16 @@ public class User
                                 System.out.println("user not found try again");
                             }
                         }
-                    }
-                }.start();
 
 
 
 
-                new Thread() {
-                    @Override
-                    public void run() {
+
+
+
 
                         if (response == 4) {
+
                             System.out.println("are you sure you want to close the account Press 1: to close 2:EXIT");
                             int response1 = sc.nextInt();
                             if (response1 == 1) {
@@ -143,8 +133,8 @@ public class User
                                 }
                             }
                         }
-                    }
-                }.start();
+
+                }
 
                 if(response>4) {
                     break;
